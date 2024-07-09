@@ -7,7 +7,7 @@ API_KEY = os.getenv('GEMINI_API_KEY')
 
 # Set up the Streamlit app
 st.title('Hook Generator')
-        anchor=False
+         anchor=False
 st.write('Generate creative hooks for your content!')
 
 # Custom CSS for button styling
