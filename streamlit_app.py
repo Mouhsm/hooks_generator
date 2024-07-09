@@ -1,4 +1,4 @@
-import streamlit as st
+# import streamlit as st
 import requests
 import os
 
@@ -9,12 +9,30 @@ API_KEY = os.getenv('GEMINI_API_KEY')
 st.title('Hook Generator')
 st.write('Generate creative hooks for your content!')
 
-# Custom CSS for background color
+# Custom CSS for button styling
 st.markdown(
     """
     <style>
-    body {
-        background-color: #f5f5f5;
+    .stButton > button {
+        background-color: #1f3a93;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+        transition-duration: 0.4s;
+    }
+    .stButton > button:hover {
+        background-color: #3c6382;
+        color: white;
+    }
+    .stButton > button:active {
+        color: white;
     }
     </style>
     """,
