@@ -9,10 +9,13 @@ API_KEY = os.getenv('GEMINI_API_KEY')
 st.title('Hook Generator')
 st.write('Generate creative hooks for your content!')
 
-# Custom CSS for button styling
+# Custom CSS for button styling and background color
 st.markdown(
     """
     <style>
+    body {
+        background-color: #f5f5f5;
+    }
     .stButton > button {
         background-color: #1f3a93;
         color: white;
@@ -40,16 +43,18 @@ st.markdown(
 )
 
 # Input fields
-user_input = st.text_area('Enter your idea:', height=100)
+user_input = st.text_area('Enter your idea:', height=100, anchor=False)
 content_type = st.selectbox(
     'Select Content Type:',
-    ['short video', 'email', 'social post', 'blog posts', 'video intro', 'ad', 'essay', 'speech']
+    ['short video', 'email', 'social post', 'blog posts', 'video intro', 'ad', 'essay', 'speech'],
+    index=0,  # Set default index to 0 for 'short video'
+    anchor=False
 )
 
 # Generate hooks button and spinner
-if st.button('Generate Hooks'):
+if st.button('Generate Hooks', anchor=False):
     if user_input:
-        with st.spinner('Generating hooks...'):
+        with st.spinner('Generating hooks...', anchor=False):
             prompt = f"""as an expert copywriter specialized in hook generation, your task is to analyze these 10 hook examples: [{"You won't believe this!"
             "What happens next will surprise you."
             "Here's the secret no one tells you."
