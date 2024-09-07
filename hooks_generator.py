@@ -13,6 +13,9 @@ st.write('Generate creative hooks for your content!')
 st.markdown(
     """
     <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    
     .stButton > button {
         background-color: #1f3a93;
         color: white;
